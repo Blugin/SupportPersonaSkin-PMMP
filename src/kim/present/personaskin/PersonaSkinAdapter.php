@@ -42,7 +42,7 @@ class PersonaSkinAdapter extends LegacySkinAdapter{
     public function fromSkinData(SkinData $data) : Skin{
         $skin = parent::fromSkinData($data);
 
-        if($data->isPersona()){
+        if($data->isPersona() || $data->isPersonaCapeOnClassic()){
             $this->personaSkinData[spl_object_id($skin)] = $data;
         }
         return $skin;
